@@ -1,0 +1,41 @@
+<h2 class="form-title">📝 We often forget the things we have no one to share with. Maybe it’s time to write them down</h2>
+
+<mat-card appearance="outlined" class="add-blog-card">
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()" #blogForm="ngForm" enctype="multipart/form-data">
+
+      <!-- Title -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Blog Title</mat-label>
+        <input matInput name="title" [(ngModel)]="blog.title" required />
+      </mat-form-field>
+
+      <!-- Description -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Blog Description</mat-label>
+        <textarea matInput name="description" [(ngModel)]="blog.description" rows="6" required></textarea>
+      </mat-form-field>
+
+      <!-- Image Upload -->
+      <div class="upload-section">
+        <button mat-flat-button color="accent" type="button" (click)="triggerFileInput()">📁 Choose Image</button>
+        <input type="file" id="fileInput" hidden (change)="onImageSelected($event)" accept="image/*" />
+        
+        <!-- Image Preview -->
+        <img *ngIf="imagePreview" [src]="imagePreview" width="200" alt="Image Preview" />
+        <p *ngIf="selectedImageName">Selected: {{ selectedImageName }}</p>
+      </div>
+
+      <div *ngIf="isUploading" class="progress-container">
+        <div class="progress-bar" [style.width.%]="uploadProgress"></div>
+        <p>Uploading Image: {{ uploadProgress }}%</p>
+      </div>
+      
+      <!-- Actions -->
+      <div class="button-row">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!blogForm.form.valid">✅ Submit</button>
+        <button mat-stroked-button color="warn" type="button" (click)="onReset()">🗑️ Reset</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

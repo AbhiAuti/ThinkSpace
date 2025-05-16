@@ -1,0 +1,10 @@
+<div *ngIf="blog" class="details-container">
+  <mat-card>
+    <img mat-card-image [src]="blog.image" alt="Blog image" />
+    <mat-card-title>{{ blog.title }}</mat-card-title>
+    <mat-card-subtitle>By {{ blog.authorName || 'Unknown' }}</mat-card-subtitle>
+    <mat-card-content>
+      <p>{{ blog.description }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

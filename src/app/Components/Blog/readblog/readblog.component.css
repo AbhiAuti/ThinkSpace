@@ -1,0 +1,23 @@
+.details-container {
+  padding: 16px;
+}
+
+mat-card {
+  max-width: 600px;
+  margin: auto;
+}
+
+mat-card-image {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+  mat-card {
+    margin: 8px;
+  }
+
+  mat-card-image {
+    max-height: 200px;
+  }
+}

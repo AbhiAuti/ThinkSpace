@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+  <span>ThinkSpace</span>
+  <span class="example-spacer"></span>
+  
+  <button mat-button color="accent" (click)="newblog()">
+    <mat-icon>create</mat-icon>
+    Write Your Blog
+  </button>
+
+  <button mat-icon-button matTooltip="Toggle theme">
+    <mat-icon>dark_mode</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="mat-elevation-z1" style="padding: 16px;">
+  <h2 style="text-align: center; margin-bottom: 20px;">All Blogs</h2>
+
+  <div class="blog-grid">
+    <mat-card *ngFor="let blog of blogList" class="blog-card">
+      <img mat-card-image [src]="blog.image" alt="Blog Image" />
+      <mat-card-header>
+        <mat-card-title>{{ blog.title }}</mat-card-title>
+        <mat-card-subtitle>{{ blog.authorName }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>{{ blog.description | slice:0:100 }}...</p>
+      </mat-card-content>
+
+      <mat-card-actions class="card-actions">
+        <button mat-raised-button color="primary" class="read-more-button" (click)="readMore(blog.id||'')">Read More</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

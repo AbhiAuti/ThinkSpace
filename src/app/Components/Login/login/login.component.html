@@ -1,0 +1,43 @@
+<div class="auth-container mat-elevation-z8">
+    <h2>{{ isLoginMode ? 'Login' : 'Register' }}</h2>
+  
+    <form *ngIf="isLoginMode" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit" class="full-width">Login</button>
+    </form>
+  
+    <form *ngIf="!isLoginMode" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+  
+      <button mat-raised-button color="accent" type="submit" class="full-width">Register</button>
+    </form>
+  
+    <div class="toggle-link">
+      <button mat-button (click)="toggleMode()">
+        {{ isLoginMode ? 'Don\'t have an account? Register' : 'Already have an account? Login' }}
+      </button>
+    </div>
+  </div>
+  
