@@ -1,10 +1,25 @@
 <div *ngIf="blog" class="details-container">
-  <mat-card>
-    <img mat-card-image [src]="blog.image" alt="Blog image" />
-    <mat-card-title>{{ blog.title }}</mat-card-title>
-    <mat-card-subtitle>By {{ blog.authorName || 'Unknown' }}</mat-card-subtitle>
+  <mat-card class="blog-card">
+    <img mat-card-image [src]="blog.image" alt="Blog image" class="blog-image" />
+
+    <mat-card-title class="title">{{ blog.title }}</mat-card-title>
+
+    <mat-card-subtitle class="subtitle">
+      By {{ blog.authorName || 'Unknown' }}
+    </mat-card-subtitle>
+
     <mat-card-content>
-      <p>{{ blog.description }}</p>
+      <p class="description">{{ blog.description }}</p>
     </mat-card-content>
+
+   <mat-card-actions >
+  <button mat-raised-button color="primary"
+          [disabled]="!blog.authorEmail"
+          (click)="sendFeedback(blog.authorEmail)">
+    <mat-icon>email</mat-icon>
+    &nbsp; Feedback
+  </button>
+</mat-card-actions>
+
   </mat-card>
 </div>

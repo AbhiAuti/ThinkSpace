@@ -43,7 +43,9 @@ register(userData:{username:string,email:string,password:string}):Observable<Use
   }
 
 
-
+logout(){
+    sessionStorage.removeItem('loggedInUser');
+  }
 
 
 }

@@ -37,8 +37,8 @@ export class LoginComponent {
         if(user){
           console.log("loggedin successful");
           sessionStorage.setItem('isLoggedIn', 'true');
-         sessionStorage.setItem('name', user.username);
-         sessionStorage.setItem('email', user.email); 
+          sessionStorage.setItem('name', user.username);
+          sessionStorage.setItem('email', user.email); 
           this.loginStatusChange.emit(true);                       // Emit login status change
           this.router.navigate(['addblog']);
         }else{

@@ -32,5 +32,4 @@ base_url ="https://6808bb48942707d722df7f39.mockapi.io/api/blog/content";
     return this.http.put(`${this.base_url}/${blogId}`, updatedData);
   }
 
-
 }

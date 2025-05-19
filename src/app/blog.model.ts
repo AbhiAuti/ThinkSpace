@@ -5,7 +5,7 @@ export interface Blog {
     image?: string;    // Can be a File (before upload) or string (URL after upload)
     createdAt?: string;       // Timestamp for creation
     updatedAt?: string;       // Optional update timestam
-    authorId?:String;
-    authorName?:String;        //for credits
-    authorEmail?: String       //for giving feedback
+    authorId?:string;
+    authorName:string;        //for credits
+    authorEmail: string     //for giving feedback
 }

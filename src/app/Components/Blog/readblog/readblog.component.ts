@@ -27,4 +27,13 @@ export class ReadblogComponent implements OnInit {
       });
     }
   }
+sendFeedback(email: string ) {
+    if (!email) {
+      alert('No email available for this author.');
+      return;
+    }
+
+    const mailtoLink = `mailto:${email}?subject=Feedback on your blog "${this.blog?.title}"&body=Hi ${this.blog?.authorName},%0D%0A%0D%0AI wanted to share some feedback on your blog titled "${this.blog?.title}".%0D%0A%0D%0AThanks!`;
+    window.location.href = mailtoLink;
+  }
 }

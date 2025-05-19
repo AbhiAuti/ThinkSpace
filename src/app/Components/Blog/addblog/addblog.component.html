@@ -16,6 +16,19 @@
         <textarea matInput name="description" [(ngModel)]="blog.description" rows="6" required></textarea>
       </mat-form-field>
 
+      <!-- Author Name -->
+<mat-form-field appearance="outline" class="full-width">
+  <mat-label>Your Name</mat-label>
+  <input matInput name="authorName" [(ngModel)]="blog.authorName" required />
+</mat-form-field>
+
+<!-- Author Email -->
+<mat-form-field appearance="outline" class="full-width">
+  <mat-label>Your Email</mat-label>
+  <input matInput type="email" name="authorEmail" [(ngModel)]="blog.authorEmail" required />
+</mat-form-field>
+
+
       <!-- Image Upload -->
       <div class="upload-section">
         <button mat-flat-button color="accent" type="button" (click)="triggerFileInput()">📁 Choose Image</button>

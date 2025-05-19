@@ -16,12 +16,18 @@ import { sharedImports } from '../../../shared-imports';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
-   constructor(private authservice:AuthService,private contentservice:ContentService, private router:Router){};
+   constructor(private authservice:AuthService,private contentservice:ContentService, private router:Router ){};
   isDarkTheme = false;
   blogList: Blog[] = [];
 
   toggleTheme() {
   this.isDarkTheme = !this.isDarkTheme;
+}
+
+
+
+loginStatus(){
+  this.authservice.isLoggedIn();
 }
 
 newblog(){
@@ -48,4 +54,12 @@ fetchBlogs(): void {
    this.router.navigate(['/blog', id]);
   }
 
+
+   login(): void {
+    this.router.navigate(['/login']);
+  }
+
+  logout(): void {
+    this.authservice.logout(); 
+  }
 }

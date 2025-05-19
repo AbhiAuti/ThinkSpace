@@ -38,7 +38,7 @@ export class AddblogComponent {
   onImageSelected(event: any): void {
     const file = event.target.files[0];
     if (file) {
-      this.selectedImageName = file.name; // Store file name
+      this.selectedImageName = file.name;            // Store file name
       this.imagePreview = URL.createObjectURL(file); // Just for local preview
     }
   }
@@ -122,7 +122,9 @@ export class AddblogComponent {
     this.blog = {
       title: '',
       description: '',
-      image: ''
+      image: '',
+      authorEmail:'',
+      authorName:''
     };
     this.imagePreview = ''; // Reset image preview
     this.selectedImageName = ''; // Reset image name
