@@ -4,16 +4,22 @@
 
     <mat-card-title class="title">{{ blog.title }}</mat-card-title>
 
+    <mat-card-content>
+      <div class="description" [innerHTML]="formatDescription(blog.description)"></div>
+    </mat-card-content>
+
     <mat-card-subtitle class="subtitle">
       By {{ blog.authorName || 'Unknown' }}
     </mat-card-subtitle>
+    
+    <div class="date">
+  <mat-icon inline>calendar_today</mat-icon>
+  {{ blog.createdAt | date:'mediumDate' }}
+</div>
 
-    <mat-card-content>
-      <p class="description">{{ blog.description }}</p>
-    </mat-card-content>
 
    <mat-card-actions >
-  <button mat-raised-button color="primary"
+  <button mat-raised-button class="btn"
           [disabled]="!blog.authorEmail"
           (click)="sendFeedback(blog.authorEmail)">
     <mat-icon>email</mat-icon>

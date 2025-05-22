@@ -1,1 +1,45 @@
-<router-outlet></router-outlet>
+<mat-toolbar  class="main-toolbar">
+  <span class="logo" (click)="goHome()" style="cursor: pointer;">
+    📝 ThinkSpace
+  </span>
+
+  <span class="example-spacer"></span>
+
+  <button mat-button class="toolbar-btn" (click)="newblog()">
+    <mat-icon>create</mat-icon>
+    Write Blog
+  </button>
+
+  <button mat-button class="toolbar-btn" *ngIf="!loginStatus()" (click)="login()">
+    <mat-icon>login</mat-icon>
+    Login
+  </button>
+
+  <button mat-button class="toolbar-btn" *ngIf="loginStatus()" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    Logout
+  </button>
+</mat-toolbar>
+
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="background-image"></div>
+
+<!-- Audio Player -->
+<audio #audioPlayer autoplay loop [muted]="isMuted">
+  <source src="/Assests/audio/Prateek Kuhad - Co2 (Official Audio) copy.mp3" type="audio/mpeg" />
+</audio>
+
+<!-- Floating Mute/Unmute Button -->
+<button mat-fab class="music-toggle-btn" (click)="toggleMute()">
+  <mat-icon>{{ isMuted ? 'volume_off' : 'volume_up' }}</mat-icon>
+</button>
+
+
+<!-- Quote Popup -->
+<div class="quote-popup" id="quoteBox">
+  <button class="close-btn" (click)="hideQuote()">×</button>
+  <p>{{ currentQuote }}</p>
+</div>

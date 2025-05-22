@@ -1,8 +1,9 @@
-
- .example-spacer {
-  flex: 1 1 auto;
+.body{
+  margin-top: -1%;
 }
-
+h2{
+  color: rgb(0, 6, 9);
+}
    .blog-grid {
   display: flex;
   flex-direction: column;
@@ -14,13 +15,14 @@
 .blog-card {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
   max-width: 100%;
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   overflow: hidden;
   border-radius: 8px;
+ 
 }
 
 .blog-card:hover {
@@ -78,6 +80,8 @@
 .read-more-button {
   font-size: 0.85rem;
   text-transform: capitalize;
+  color: white;
+  background-color: #494949;
 }
 
 /* Responsive for mobile */

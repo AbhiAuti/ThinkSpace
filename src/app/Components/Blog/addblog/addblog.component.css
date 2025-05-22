@@ -1,7 +1,7 @@
 .form-title {
     text-align: center;
     margin: 20px 0;
-    color: #3f51b5;
+    color: #f68904;
     font-weight: bold;
   }
   
@@ -23,8 +23,12 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 16px;
+    
   }
-  
+  .upload{
+    color: white;
+    background-color: #424141;
+  }
   .file-name {
     font-style: italic;
     color: #666;
@@ -57,7 +61,7 @@
   
   .progress-bar {
     height: 100%;
-    background-color: #2196f3;
+    background-color: #484a4c;
     transition: width 0.3s ease;
   }
   

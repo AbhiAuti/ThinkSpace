@@ -12,7 +12,7 @@
         <input matInput type="password" formControlName="password" />
       </mat-form-field>
   
-      <button mat-raised-button color="primary" type="submit" class="full-width">Login</button>
+      <button mat-raised-button id="btn" type="submit" class="full-width">Login</button>
     </form>
   
     <form *ngIf="!isLoginMode" [formGroup]="registerForm" (ngSubmit)="onRegister()">
@@ -31,11 +31,11 @@
         <input matInput type="password" formControlName="password" />
       </mat-form-field>
   
-      <button mat-raised-button color="accent" type="submit" class="full-width">Register</button>
+      <button mat-raised-button id="btn" type="submit" class="full-width">Register</button>
     </form>
   
     <div class="toggle-link">
-      <button mat-button (click)="toggleMode()">
+      <button mat-button  (click)="toggleMode()">
         {{ isLoginMode ? 'Don\'t have an account? Register' : 'Already have an account? Login' }}
       </button>
     </div>

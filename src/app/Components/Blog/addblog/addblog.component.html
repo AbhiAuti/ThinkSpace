@@ -31,7 +31,7 @@
 
       <!-- Image Upload -->
       <div class="upload-section">
-        <button mat-flat-button color="accent" type="button" (click)="triggerFileInput()">📁 Choose Image</button>
+        <button mat-flat-button class="upload" type="button" (click)="triggerFileInput()">📁 Choose Image</button>
         <input type="file" id="fileInput" hidden (change)="onImageSelected($event)" accept="image/*" />
         
         <!-- Image Preview -->
@@ -46,8 +46,8 @@
       
       <!-- Actions -->
       <div class="button-row">
-        <button mat-raised-button color="primary" type="submit" [disabled]="!blogForm.form.valid">✅ Submit</button>
-        <button mat-stroked-button color="warn" type="button" (click)="onReset()">🗑️ Reset</button>
+        <button mat-raised-button class="upload" type="submit" [disabled]="!blogForm.form.valid">✅ Submit</button>
+        <button mat-stroked-button class="upload" type="button" (click)="onReset()">🗑️ Reset</button>
       </div>
     </form>
   </mat-card-content>

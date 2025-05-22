@@ -36,4 +36,14 @@ sendFeedback(email: string ) {
     const mailtoLink = `mailto:${email}?subject=Feedback on your blog "${this.blog?.title}"&body=Hi ${this.blog?.authorName},%0D%0A%0D%0AI wanted to share some feedback on your blog titled "${this.blog?.title}".%0D%0A%0D%0AThanks!`;
     window.location.href = mailtoLink;
   }
+
+  formatDescription(desc: string): string {
+  if (!desc) return '';
+  // Replace line breaks with <p> tags for passage-like formatting
+  return desc
+    .split('\n')
+    .filter(p => p.trim() !== '')  // ignore empty lines
+    .map(p => `<p>${p}</p>`)
+    .join('');
+}
 }

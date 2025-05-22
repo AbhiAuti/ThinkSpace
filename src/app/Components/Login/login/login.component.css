@@ -23,6 +23,12 @@
 .full-width {
   width: 100%;
   margin-bottom: 15px;
+ 
+}
+
+#btn{
+    color: white;
+    background-color: #424141;
 }
 
 .toggle-link {

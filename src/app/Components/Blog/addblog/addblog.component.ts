@@ -96,6 +96,7 @@ export class AddblogComponent {
       this.uploadToImgBB(file).then(imageUrl => {
         this.blog.image = imageUrl;
         this.blog.authorId = loggedInUser;
+        this.blog.createdAt = new Date().toISOString();
 
         this.contentservice.createPost(this.blog).subscribe(
           (response) => {
