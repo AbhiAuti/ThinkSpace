@@ -13,11 +13,10 @@ import { AuthService } from './Services/auth.service';
 export class AppComponent implements OnInit {
 
 quotes = [
-    '“Your limitation—it’s only your imagination.”',
-    '“Push yourself, because no one else is going to do it for you.”',
-    '“Great things never come from comfort zones.”',
+    '“your the universe feeling itself.”',
+    '“i prayed for love ,the love lasted but lover left.”',
     '“Dream it. Wish it. Do it.”',
-    '“Success doesn’t just find you. You have to go out and get it.”'
+    '“You Are That.”'
   ];
   currentQuote = '';
 
