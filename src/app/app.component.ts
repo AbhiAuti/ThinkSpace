@@ -13,8 +13,9 @@ import { AuthService } from './Services/auth.service';
 export class AppComponent implements OnInit {
 
 quotes = [
-    '“your the universe feeling itself.”',
-    '“i prayed for love ,the love lasted but lover left.”',
+    '“Your the universe experiencing itself.”',
+     '“Life is beautiful.”',
+    '“I prayed for love ,the love lasted but lover left.”',
     '“Dream it. Wish it. Do it.”',
     '“You Are That.”'
   ];
@@ -27,6 +28,18 @@ quotes = [
 
 ngAfterViewInit() {
   this.audioPlayer.nativeElement.volume = 0.1;
+}
+
+
+toggleMute() {
+  this.isMuted = !this.isMuted;
+  const player = this.audioPlayer.nativeElement;
+  player.muted = this.isMuted;
+  
+  // Ensure play is triggered when unmuted on first interaction
+  if (!this.isMuted && player.paused) {
+    player.play();
+  }
 }
 
   ngOnInit() {
@@ -54,10 +67,6 @@ ngAfterViewInit() {
   quoteBox.classList.remove('show');
 }
 
-
-  toggleMute() {
-    this.isMuted = !this.isMuted;
-  }
   constructor(private authservice:AuthService,private router:Router) {}; 
 
   newblog(){
@@ -74,19 +83,13 @@ loginStatus():boolean{
 
  login():void {
     this.router.navigate(['/login']);
-    
   }
-
   logout():void{
-    this.authservice.logout(); 
-    
+    this.authservice.logout();  
   }
-
   goHome() {
     this.router.navigate(['/']); 
-  }
-
-  
+  }  
 }
 
 

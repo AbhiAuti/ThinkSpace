@@ -38,7 +38,8 @@ body {
 
 /* Move background only on mobile */
 @media screen and (max-width: 767px) {
-  .background-image {
+    .background-image {
+    top: 52px;
     animation: moveBackground 120s linear infinite;
   }
 }
