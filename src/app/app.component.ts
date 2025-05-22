@@ -22,7 +22,7 @@ quotes = [
   currentQuote = '';
 
 
-  isMuted = true;
+  isMuted = false;
 
   @ViewChild('audioPlayer') audioPlayer!: ElementRef<HTMLAudioElement>;
 
